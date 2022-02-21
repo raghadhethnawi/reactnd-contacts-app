@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 function ListContacts(props){
     return(
@@ -15,7 +15,11 @@ function ListContacts(props){
                             <p>{contact.name}</p>
                             <p>{contact.handle}</p>
                         </div>
-                        <button className='contact-remove'>Remove</button>
+                        <button 
+                            onClick={() => props.onDeleteContact(contact)}
+                            className='contact-remove'>
+                            Remove
+                        </button>
                     </li>
                 ))}
             </ol>
